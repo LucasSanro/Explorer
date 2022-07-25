@@ -1,0 +1,93 @@
+*{
+  padding: 0;
+  margin: 0;
+
+  box-sizing: border-box;
+
+}
+
+:root{
+
+  --bg-color:#121214;
+  --primary-text-color:#FFFFFF;
+  --primary-color:hsl(194, 100%, 63%);
+  --bg-color-options:rgba(66, 211, 255, 0.13);
+
+  --color-var:195;
+  --buttons-color::rgba(var(var(--color-var)), 211, 255, 0.13);
+
+  --font-family:'Roboto', sans-serif;
+
+
+  font-size: 62.5%;
+}
+
+body{
+  background-color: var(--bg-color) ;
+  font-family: var(--font-family);
+  color: var(--primary-text-color);
+
+  display: grid;
+
+  min-height: 100vh;
+
+}
+
+
+main{
+
+  align-self: end;
+  justify-self: center;
+
+}
+
+
+
+.options{
+
+  display: flex;
+  gap: 3.2rem;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9999px;
+
+  background: var(--bg-color-options);
+
+  width: clamp(10rem, 10rem + 30vw, 22.8rem);
+  height:clamp(7rem, 3rem + 5vw, 10.8rem) ;
+
+}
+
+.hide{
+  display: none;
+}
+
+#timer{
+  font-size: clamp(4rem, 4rem + 10vw, 8.8rem);
+  
+  display: flex;
+}
+
+
+button{
+  background-color: transparent;
+
+  border:none;
+
+  cursor: pointer;
+}
+
+button svg{
+
+  width: clamp(3.2rem, 2rem + 12vw, 6.4rem);
+
+}
+
+footer{
+
+  padding:0 2.2rem 1rem 0 ;
+
+  align-self: end;
+  justify-self: end;
+}

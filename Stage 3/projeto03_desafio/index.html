@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins& family=Staatliches&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" >
+    <title>Desafio</title>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <h1>Mentoria</h1>
+        <p>O primeiro passo, é preencher esse formulário de inscrição.</p>
+      </header>
+      <form id="form">
+        <fieldset>
+          <div class="fildset-whapper">
+            <legend>Informações Pessoais</legend>
+            <div class="name_lastName">
+              <div class="input-whapper">
+                <label for="name">Nome</label>
+                <input type="text" id="name" />
+              </div>
+              <div class="input-whapper">
+                <label for="lastName">Sobrenome</label>
+                <input type="text" id="lastName" />
+              </div>
+            </div>
+            <div class="input-whapper">
+              <label for="email"
+                >Email<span>(digite um email válido) </span></label
+              >
+              <input type="email" id="email" />
+            </div>
+            <div class="input-whapper">
+              <label for="password"
+                >Senha<span>(mínimo de 6 caracteres) </span></label
+              >
+              <input required minlength="6" type="password" id="password" />
+            </div>
+            <div class="fildset-whapper">
+              <legend>Mentor</legend>
+                <div class="input-whapper">
+                  <label for="mentor">Selecione seu mentor</label>
+                  <select name="" id="mentor"><option value="mayk">Mayk Brito</option>
+                    <option value="diego">Diego Fernandes</option>
+                    <option value="guicap">Guilherme Capitão</option>
+                  </select>
+                </div>
+                <div class="fildset-whapper">
+                  <legend>Seus horários disponíveis</legend>
+                  <div class="dates">
+                    <legend>Primeira mentoria</legend>
+                    <div class="date">
+                      <div class="input-whapper">
+                        <label for="date">Data<span>(DD/MM/AAAA)</span></label>
+                        <input type="date" id="name" />
+                      </div>
+                      <div class="input-whapper">
+                        <label for="beginHour">Das</label>
+                        <input type="time" id="beginHour" />
+                      </div>
+                      <div class="input-whapper">
+                        <label for="endHour">Até</label>
+                        <input type="time" id="endHour" />
+                      </div>
+                    </div>
+                    <legend id="secondMentory">Segunda mentoria</legend>
+                    <div class="date">
+                      <div class="input-whapper">
+                        <label for="date">Data<span>(DD/MM/AAAA)</span></label>
+                        <input type="date" id="name" />
+                      </div>
+                      <div class="input-whapper">
+                        <label for="beginHour">Das</label>
+                        <input type="time" id="beginHour" />
+                      </div>
+                      <div class="input-whapper">
+                        <label for="endHour">Até</label>
+                        <input type="time" id="endHour" />
+                      </div>
+                  </div>
+          </div>
+        </fieldset>
+      </form>
+      <footer>
+        <input form="form" type="submit" value="Salvar evento" />
+      </footer>
+    </div>
+  </body>
+</html>
