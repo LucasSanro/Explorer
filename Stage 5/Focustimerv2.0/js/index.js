@@ -26,16 +26,16 @@ const coffeBackground = document.querySelector('.coffeBackground')
 const coffeInside = document.querySelector('.coffeInside')
 
 const floresta = new Audio(
-  'https://drive.google.com/file/d/1CRHkV72WUMdcqec5GT_KdsqFz0z3VAOA/view'
+  'https://github.com/LucasSanro/Explorer/blob/main/Stage%205/Focustimerv2.0/sounds/Floresta.wav?raw=true'
 )
 const chuva = new Audio(
-  'https://drive.google.com/file/d/1Ip8xBqAUJ-bty51Wz8JBtX_bWXCgA0P2/view'
+  'https://github.com/LucasSanro/Explorer/blob/main/Stage%205/Focustimerv2.0/sounds/Chuva.wav?raw=true'
 )
 const cafeteria = new Audio(
-  'https://drive.google.com/file/d/1OxLKpCwg2wrxXFNUHgZxJ51QEt0ac5RA/view'
+  'https://github.com/LucasSanro/Explorer/blob/main/Stage%205/Focustimerv2.0/sounds/Cafeteria.wav?raw=true'
 )
 const lareira = new Audio(
-  'https://drive.google.com/file/d/1MakaBPxJvTa_whaSM3kEbRcxiVd1GRCB/view'
+  'https://github.com/LucasSanro/Explorer/blob/main/Stage%205/Focustimerv2.0/sounds/Lareira.wav?raw=true'
 )
 const kitchenTimer = new Audio(
   'https://github.com/maykbrito/automatic-video-creator/blob/master/audios/kichen-timer.mp3?raw=true'
@@ -54,8 +54,6 @@ const backgrounds = [
 ]
 
 const insides = [rainInside, coffeInside, campInside, treeInside]
-
-const musics = [floresta, chuva, cafeteria, lareira]
 
 buttonMusicRain.addEventListener('click', function () {
   ButtonPress(rainBackground, rainInside)
@@ -180,14 +178,15 @@ function activeButtons(backgroundSelector, insideSelector) {
   insideSelector.classList.add('in')
   backgroundSelector.classList.add('back')
 }
-function MusicValider(music) {
+function MusicValider(musicSelector) {
   if ((musicSensor = true)) {
     floresta.pause()
     chuva.pause()
     lareira.pause()
     cafeteria.pause()
-  } else {
-    music.play()
+  }
+  if ((musicSensor = false)) {
+    musicSelector.play()
     musicSensor = true
   }
 }
