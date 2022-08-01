@@ -219,5 +219,6 @@ function MusicValider(backgroundSelector, musicSelector) {
 
   if (!activeButton || activeButton != backgroundSelector) {
     musicSelector.play()
+    musicSelector.loop = true
   }
 }

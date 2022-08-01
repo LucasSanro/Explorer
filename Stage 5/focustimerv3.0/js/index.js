@@ -6,12 +6,18 @@ let timerTimeOut
 let musicSensor = false
 
 // OptionsButtons
+const sun = document.querySelector('.sun')
+const moon = document.querySelector('.moon')
+const body = document.querySelector('#darkSwith')
+
 const buttonPlay = document.querySelector('.play')
 const buttonPause = document.querySelector('.pause')
 const buttonStop = document.querySelector('.stop')
 const buttonPlus = document.querySelector('.plus')
 const buttonLess = document.querySelector('.less')
 const buttonSets = document.querySelector('.sets')
+const darkMode = document.querySelectorAll('.darkmode')
+console.log(darkMode)
 
 const rainBackground = document.querySelector('.rainBackground')
 const rainInside = document.querySelector('.rainInside')
@@ -24,6 +30,11 @@ const treeInside = document.querySelector('.treeInside')
 
 const coffeBackground = document.querySelector('.coffeBackground')
 const coffeInside = document.querySelector('.coffeInside')
+
+let campFireVolume = document.querySelector('#campFire')
+let rainVolume = document.querySelector('#rain')
+let treeVolume = document.querySelector('#tree')
+let coffeShopVolume = document.querySelector('#coffeShop')
 
 const floresta = new Audio(
   'https://github.com/LucasSanro/Explorer/blob/main/Stage%205/Focustimerv2.0/sounds/Floresta.wav?raw=true'
@@ -52,8 +63,26 @@ const backgrounds = [
   coffeBackground,
   treeBackground
 ]
-
 const insides = [rainInside, coffeInside, campInside, treeInside]
+
+sun.addEventListener('click', function () {
+  moon.classList.remove('hide')
+  sun.classList.add('hide')
+  body.classList.add('dark')
+
+  for (const element of darkMode) {
+    element.classList.add('darkButtons')
+  }
+})
+moon.addEventListener('click', function () {
+  sun.classList.remove('hide')
+  moon.classList.add('hide')
+  body.classList.remove('dark')
+
+  for (const element of darkMode) {
+    element.classList.remove('darkButtons')
+  }
+})
 
 buttonMusicRain.addEventListener('click', function () {
   MusicValider(rainBackground, chuva)
@@ -219,5 +248,16 @@ function MusicValider(backgroundSelector, musicSelector) {
 
   if (!activeButton || activeButton != backgroundSelector) {
     musicSelector.play()
+    musicSelector.loop = true
   }
+}
+
+campFireVolume.addEventListener('change', e => volumeControler(e, lareira))
+rainVolume.addEventListener('change', e => volumeControler(e, chuva))
+coffeShopVolume.addEventListener('change', e => volumeControler(e, cafeteria))
+treeVolume.addEventListener('change', e => volumeControler(e, floresta))
+
+function volumeControler(e, music) {
+  music.volume = e.currentTarget.value / 100
+  console.log(e, music)
 }
