@@ -14,25 +14,6 @@
       <a href="/404" onclick="route()">404</a>
     </nav>
     <div id="app"></div>
-    <script>
-      const routes = {
-        "about":"/pages/about.html",
-        "contact":"/pages/contact.html",
-        404:"/pages/404.html",
-        "/":"/pages/home.html"
-
-      }
-      function route(event) {
-        event = event || window.event
-        event.preventDefault()
-        handle()
-        
-      }
-
-      function handle(){
-        const pathname=window.location.pathname
-        console.log(pathname)
-      }
-    </script>
+    <script src="/Explorer/Stage 6/js/index.js" type="module"></script>
   </body>
 </html>
