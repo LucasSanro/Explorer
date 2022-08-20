@@ -1,28 +1,12 @@
-const routes = {
-  '/about': 'Explorer/Stage%206/pages/about.html',
-  '/contact': 'Explorer/Stage%206/pages/contact.html',
-  404: 'Explorer/Stage%206/pages/404.html',
-  '/': 'Explorer/Stage%206/pages/home.html'
-}
-function route(event) {
-  event = event || window.event
-  event.preventDefault()
-  window.history.pushState({}, '', event.target.href)
-  handle()
-}
+import Router from './routers.js'
 
-function handle() {
-  const { pathname } = window.location
-  const route = routes[pathname] || routes[404]
+const router= new Router()
 
-  fetch(route)
-    .then(data => data.text())
-    .then(html => {
-      document.querySelector('#app').innerHTML = html
-    })
+router.add('/about',"Explorer/Stage%206/pages/about.html")
+router.add('/contact','Explorer/Stage%206/pages/contact.html')
+router.add(404,'Explorer/Stage%206/pages/404.html')
+router.add('/','Explorer/Stage%206/pages/home.html')
 
-  console.log(route)
-}
-handle()
-window.onpopstate = () => handle()
-window.route=()=>route()
+router.handle()
+window.onpopstate = () => router.handle()
+window.route=()=>router.route()
