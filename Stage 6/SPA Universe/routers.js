@@ -20,8 +20,13 @@ export default class Router {
       .then(data => data.text())
       .then(html => {
         document.querySelector('#app').innerHTML = html
+        const body = document.querySelector('body')
+        const className = pathname.replace('/', '')
+        body.removeAttribute('class')
+        if (!!className) body.classList.add(className)
       })
 
     console.log(route)
+    console.log(pathname)
   }
 }
