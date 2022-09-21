@@ -71,10 +71,18 @@ body header{
   cursor: pointer;
 }
 
+.darkStar{
+  display: none;
+}
 .searchCamp button:hover{
   background-color: #FFFFFF;
   color: hsla(195, 91%, 25%, 1);
   transition: 0.2s;
+  
+}
+.searchCamp button:hover .darkStar{display: block;}
+.searchCamp button:hover .star {
+  display: none;
 }
 
 #app{
